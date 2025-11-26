@@ -249,6 +249,7 @@ textarea {
 }
 
 /* ================= REDES SOCIAIS ================= */
+/* ================= REDES SOCIAIS (SVG PROFISSIONAL) ================= */
 
 .social {
     padding: 60px 40px;
@@ -260,22 +261,27 @@ textarea {
 .social-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 25px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .social-icon {
-    font-size: 32px;
-    color: white;
+    width: 60px;
+    height: 60px;
     background: #222;
-    padding: 15px;
-    width: 55px;
-    height: 55px;
     border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: 0.3s ease;
+    align-items: center;
+    padding: 14px;
+    transition: .3s ease;
+}
+
+.social-icon svg {
+    width: 28px;
+    fill: white;
+    transition: .3s ease;
 }
 
 .social-icon:hover {
@@ -283,3 +289,6 @@ textarea {
     background: #c59d5f;
 }
 
+.social-icon:hover svg {
+    fill: #fff;
+}
