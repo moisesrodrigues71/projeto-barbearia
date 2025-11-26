@@ -11,27 +11,33 @@
     <header class="header fade-down">
         <nav class="navbar">
             <div class="logo">FOR MEN</div>
-            <div class="menu-icon">☰</div>
+            <div class="menu-icon" id="menu-btn">☰</div>
+
+            <ul class="mobile-menu" id="mobile-menu">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
         <div class="header-content"></div>
         <h2>FOR MEN</h2>
-        <h1>Barberia do Brabos</h1>
+        <h1 class="reveal">Barberia do Brabos</h1>
     </header>
     <section class="servico">
       <h2 class="section-title">Nossos Serviços</h2>
 
       <div class="servico-grid">
         
-        <div class="servico-card fade-up">
+        <div class="servico-card fade-up reveal">
             <img src="imagem/corte masculino.png" alt="Corte Masculino">
             <h3>Corte Masculino</h3>
         </div>
 
-        <div class="servico-card fade-up">
+        <div class="servico-card fade-up reveal">
             <img src="imagem/barba-completa.jpeg" alt="Barba Completa">
             <h3>Barba Completa</h3>
         </div>
-        <div class="servico-card fade-up">
+        <div class="servico-card fade-up reveal">
             <img src="imagem/Corte+barba.jpeg" alt="orte + Barba">
             <h3>Corte + Barba</h3>
         </div>
@@ -53,9 +59,9 @@
         </div>
     </section>
     <section class="galeria">
-        <h2 class="section-title">Nossa Galeria</h2>
+        <h2 class="section-title reveal">Nossa Galeria</h2>
 
-        <div class="galeria-grid">
+        <div class="galeria-grid reveal">
             <img src="imagem/galeria01.jpeg" class= "zoom-in" alt="Galeria 01">
             <img src="imagem/galeria02.jpeg" class="zoom-in"  alt="Galeria 02">
             <img src="imagem/galeria04.jpeg" class="zoom-in" alt="Galeria 03">
@@ -174,6 +180,30 @@ const observer = new IntersectionObserver((entries) => {
 // Ativa o observer
 elements.forEach(el => observer.observe(el));
 
+
+   function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal');
+
+        elements.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const visiblePoint = 100;
+
+            if (elementTop < windowHeight - visiblePoint) {
+                el.classList.add("active");
+            }
+        });
+
+         const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
      </script>
 </body>
 </html>

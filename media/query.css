@@ -33,7 +33,7 @@
         background-repeat: no-repeat;
     }
      .servico-grid {
-        grid-template-columns: repeat(3, 1fr); /* 2 colunas */
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
         gap: 30px;
         padding: 0 40px 60px;
     }
@@ -72,6 +72,20 @@
         width: 22px;
     }
 }
+
+@media (max-width: 480px) {
+    .servico-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+        gap: 20px;
+        padding: 0 20px 40px;
+    }
+
+    .servico-card img {
+        height: 220px; /* deixa a imagem mais bonita e proporcional */
+        object-fit: cover;
+    }
+}
+
 
 /* ------ TELAS GRANDES (MONITORES) ------ */
 

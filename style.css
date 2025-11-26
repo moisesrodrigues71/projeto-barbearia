@@ -292,3 +292,78 @@ textarea {
 .social-icon:hover svg {
     fill: #fff;
 }
+
+
+/* ANIMAÇÃO BÁSICA DE ENTRADA */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMAÇÃO HOVER NOS CARDS */
+.servico-card {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+/* MENU HAMBÚRGUER */
+.mobile-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #111;
+    width: 200px;
+    padding: 15px 0;
+    border-radius: 10px;
+    list-style: none;
+    text-align: center;
+
+    display: none; /* começa escondido */
+    flex-direction: column;
+    gap: 10px;
+
+    animation: fadeDown .3s ease;
+    z-index: 10;
+}
+
+.mobile-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 0;
+    display: block;
+}
+
+.mobile-menu li a:hover {
+    background: #222;
+}
+
+/* Animação */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do botão (opcional) */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
