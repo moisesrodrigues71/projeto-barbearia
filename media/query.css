@@ -1,0 +1,94 @@
+@media (max-width: 900px) {
+    .precos,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 48px;
+    }
+}
+
+/* Celulares */
+@media(max-width: 600px) and (max-width: 992px) {
+    
+    .header {
+        text-align: center;
+        padding: 20px;
+        height: 75vh;
+    }
+
+    .header h1 {
+        font-size: 38px;
+    }
+
+    .header h2 {
+        font-size: 24px;
+    }
+
+    /* Preço imagem: mostrar inteira no celular */
+    .preco-img {
+        height: 260px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+     .servico-grid {
+        grid-template-columns: repeat(3, 1fr); /* 2 colunas */
+        gap: 30px;
+        padding: 0 40px 60px;
+    }
+
+    .servico-card img {
+        height: 200px;
+        width: 100%;       /* altura reduzida para caber bem */
+        object-fit: cover;    /* mantém estilo bonito sem distorção */
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 15px;
+        padding: 0 15px 40px;
+    }
+    .galeria-grid img {
+         height: 200px;
+        width: 100%;       /* altura reduzida para caber bem */
+        object-fit: cover;
+    }
+
+     .contato {
+        padding: 40px 20px;
+    }
+}
+
+/* ------ TELAS GRANDES (MONITORES) ------ */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Monitores grandes 1366px+ */
+@media (min-width: 1200px) {
+    body > * {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Monitores muito grandes 1600px+ */
+@media (min-width: 1600px) {
+    .header {
+        height: 100vh;
+        background-size: cover;
+    }
+
+    .preco-img,
+    .about-img {
+        height: 550px;
+    }
+
+    .servico-grid img {
+        height: 260px;
+    }
+}
